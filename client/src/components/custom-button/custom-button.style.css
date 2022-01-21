@@ -1,0 +1,15 @@
+.custom-button {
+    min-width: 200px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 15px 0px;
+    box-shadow: 1px 1px 20px 7px #665dfe4f;
+    color: rgba(26, 27, 29, 0.933);
+    transition: 0.3s ease-in;
+    transition: 0.4s ease;
+}
+
+.custom-button:hover {
+    background-color: #665dfe;
+    color: #edeeee;
+}

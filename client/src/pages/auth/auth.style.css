@@ -1,0 +1,51 @@
+.sign-up,
+.sign-in {
+    max-width: 500px;
+    margin: auto;
+}
+.sign-up {
+    display: flex;
+    flex-direction: column;
+}
+.sign-up .title {
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+.sign-up .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-page-btn-c {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0px;
+}
+.btn-group {
+    width: fit-content;
+    margin: auto;
+}
+.auth-btn {
+    min-width: 150px;
+    text-align: center;
+    padding: 15px 0px;
+    background-color: #665dfe1c;
+    box-shadow: 1px 1px 20px 7px #665dfe4f;
+    color: rgba(26, 27, 29, 0.933);
+    transition: 0.3s ease-in;
+}
+.auth-btn-l {
+    border-radius: 250px 0px 0px 25px;
+}
+.auth-btn-r {
+    border-radius: 0px 25px 250px 0px;
+}
+.auth-btn-active {
+    background-color: #665dfe;
+    color: #edeeee;
+    box-shadow: -1px 14px 46px 1px #665dfe;
+}
+.auth-btn-active:hover {
+    color: #dadada;
+}

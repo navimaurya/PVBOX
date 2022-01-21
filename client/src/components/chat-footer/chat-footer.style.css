@@ -1,0 +1,15 @@
+.message-input {
+    border-radius: 30px;
+    width: 90%;
+    padding: 10px 20px;
+    left: 0;
+    border-color: transparent;
+    background-color: transparent;
+}
+.message-input:focus {
+    padding: 10px 20px;
+    left: 0;
+    border-color: transparent;
+    outline: none;
+    background-color: #ffff;
+}
