@@ -22,6 +22,10 @@ const messageSchema = mongoose.Schema({
         type: Date,
         default: new Date()
     },
+    file: {
+        type: Object,
+        default: null
+    },
     //Time when message is delivered to receiver
     delivered: {
         type: Date,

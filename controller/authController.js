@@ -137,6 +137,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 exports.isReceiverUse = catchAsync(async (req, res, next) => {
     const { receiver, phone } = req.body
+    console.log(req.body);
     let data = null;
     if (phone !== undefined) {
         if (typeof phone !== 'number' || phone.toString().length < 10) return next(new AppError("Provede a valid number.", 400));
@@ -274,6 +275,27 @@ exports.logout = (req, res) => {
     });
 };
 
+exports.updateUser = catchAsync(async (req, res, next) => {
+    const { name, email, phone, dob, website, city } = req.body
+    console.log(req.body, "Hello");
+    if (!name || !email || !phone) {
+        return next(new AppError('Name, email and phone cannot be empty', 401))
+    }
+    const user = await User.findById(req.user._id);
+    if (!user) return next(new AppError('You are not authorized for this action.', 401));
+    user.name = name;
+    user.email = email
+    user.phone = phone
+    user.dob = dob
+    user.website = website
+    user.city = city
+    await user.save()
+    res.status(202).send({
+        status: 'success',
+        data: user
+    })
+});
+
 exports.updatePassword = catchAsync(async (req, res, next) => {
     // 1) Get user from colection
     const user = await User.findById(req.user._id).select("+password");
@@ -288,6 +310,9 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     // 3) is so update user  password
     user.password = req.body.password;
     user.passwordConfirm = req.body.passwordConfirm;
+    if (user.password !== user.passwordConfirm) {
+        return next(new AppError("Your new password not matched.", 401));
+    }
     await user.save();
 
     // 4) log user in

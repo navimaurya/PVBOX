@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const cors = require('cors')
 require('path');
 
+const globalErrorController = require('./controller/errorController');
 const AppError = require("./utils/appError");
 const messageApp = require('./messageApp');
 const mongoose = require('mongoose');
@@ -74,9 +75,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //message app API module
 app.use(messageApp)
 
+app.get("*", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "/index.html")
+    );
+});
+
+//Adding Globule Error handler
+app.use(globalErrorController);
+
+
 //Starting app
-port = process.env.PORT || 5000
-server.listen(port, "localhost", (err) => {
+let port = 5000
+let host = 'localhost'
+if (process.env.ENV == 'production') {
+    port = process.env.PORT || 8080
+    host = process.env.HOST || '0.0.0.0'
+}
+
+server.listen(port, host, (err) => {
     if (err) {
         return console.log("Somthing went wrong");
     }

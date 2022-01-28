@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 
 const mainRouter = require('./router/mainRouter')
 const AppError = require('./utils/appError');
-const globalErrorController = require('./controller/errorController'); // Global Error controller
+// const globalErrorController = require('./controller/errorController'); // Global Error controller
 
 const app = express()
 
@@ -18,7 +18,7 @@ app.use(express.json({ limit: "100kb" }));
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '/', 'index.html'));
 });
 app.use(mainRouter);
 
@@ -29,11 +29,11 @@ app.use(mainRouter);
 
 app.get("*", (req, res) => {
     res.sendFile(
-        path.join(__dirname, "./client/build")
+        path.join(__dirname, "/index.html")
     );
 });
 
 //Adding Globule Error handler
-app.use(globalErrorController);
+// app.use(globalErrorController);
 
 module.exports = app;
