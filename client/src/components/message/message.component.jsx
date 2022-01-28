@@ -73,6 +73,38 @@ const Message = ({ data, userId }) => {
                 </div> */}
             </div>
         </div>
+        // <div className={`message `}>
+        //         <div className="message-wrapper">
+        //             <div className="message-content">
+        //                 <div style={{
+        //                     padding: '15px 10px 15px 10px',
+        //                     width: '100%',
+        //                     backgroundColor: '#666',
+        //                     top: '-154%',
+        //                     background: '#d7d7d7',
+        //                     borderRadius: '10px 10px 0px 0px',
+        //                     borderTop: '4px solid #665dfe',
+        //                     maxHeight: '100px',
+        //                     cursor: 'pointer'
+        //                 }}>
+        //                     <div className="d-flex align-items-center">
+        //                         <div style={{ minWidth: '50px', minHeight: '50px', height: '55px', width: '55px' }}>
+        //                             {/* <FileIcon extension={fileState.type.split('/')[0]} {...defaultStyles[fileState.type.split('/')[0]]} /> */}
+        //                             <FileIcon extension='docx' {...defaultStyles['docx']} />
+        //                         </div>
+        //                         <div className="text-left overflow-hidden">
+        //                             <span className="ml-2 text-truncate ">Hello brow ksdfhksdhfkjsdhkfjsdhfkjhsdkjfhsdkjhfkjsdhfsdhfkjsdhfkjdsbvkjsdbkjv hskdjhfkjsdhkfhskuehfiueshf sehfkushjdfhksdjhfs fueh</span>
+        //                             <br />
+        //                             <span className="ml-2 text-truncate">300 MB</span>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         <div className="message-options">
+        //             <span className="message-date">20:00pm </span>
+        //         </div>
+        //     </div>
     )
 }
 

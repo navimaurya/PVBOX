@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getLoggedInUserStart } from './redux/user/user-action';
 import Auth from './pages/auth/authPage';
 import AppStarter from './App-starter';
-import Error from './components/error/error-component';
 
 import './App.css';
 
@@ -27,7 +26,7 @@ class App extends Component {
               <Route path='/' component={Auth} />
           }
         </Switch>
-        <Error />
+
       </>
     );
   }

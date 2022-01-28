@@ -72,18 +72,20 @@ const AddFriend = ({ addNewFriend }) => {
                                     suggestions.map((item, i) => (
                                         <li class="list-group-item d-flex justify-content-between align-items-start" key={i}>
                                             <div class="ms-2 me-auto row w-100 ">
-                                                <div className="col-2 text-center" style={{ maxWidth: '100px' }}>
+                                                <div className="col-2 text-center" style={{}}>
                                                     <div className="d-inline text-center">
                                                         <img className="d-inline" src={item.image} alt="user" style={{ height: '50px', width: '50px', borderRadius: '50%', border: '1px solid ##07204ec2', marginRight: '10px' }} />
                                                     </div>
                                                 </div>
-                                                <div className="col-7"><div class="fw-bud d-inline">{item.name}</div><br />
-                                                    <span className="list-username">
-                                                        @{item.username}
-                                                    </span>
+                                                <div className="col-7">
+                                                    <div class="fw-bud d-inline ml-1">{item.name}<br />
+                                                        <span className="list-username ml-1">
+                                                            @{item.username}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div className="col-3 text-center">
-                                                    <Button style={{ minWidth: '100px', padding: '10px 0px' }} onClick={() => onSubmitHandler(item.username)} >ADD</Button>
+                                                    <Button type="button" data-dismiss="modal" aria-label="Close" style={{ minWidth: '70px', padding: '10px 0px' }} onClick={() => onSubmitHandler(item.username)} >ADD</Button>
                                                 </div>
                                             </div>
                                         </li>

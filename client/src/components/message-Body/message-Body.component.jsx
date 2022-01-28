@@ -1,4 +1,5 @@
 import React, { Component, useRef, useState, useEffect, memo } from 'react'
+import { FileIcon, defaultStyles } from 'react-file-icon';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -56,7 +57,6 @@ const MessageBody = ({ chats, state, chatFetchStart, activeChat }) => {
                         // </MessageDay>
                     )
             }
-
             <div style={{ float: "left" }}
                 ref={ref}>
             </div>

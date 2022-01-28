@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { connect } from 'react-redux'
 
 
-const MainLayout = ({ aside, children, visible = false }) => {
+const MainLayout = ({ aside, children, visible }) => {
     // const [view, setView] = useState(false)
     return (
         <>
             {aside}
-            <main className={`main ${visible && 'main-visible'}`}>
+            <main className={`main ${visible ? 'main-visible' : ""}`}>
                 {children}
             </main>
         </>

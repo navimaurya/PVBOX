@@ -1,13 +1,17 @@
 import React from "react";
 import ProfileSidebar from "../../components/profile-sidebar/profile-sidebar.component";
 import ProfileBody from "../../components/profile-body/profile-body.component";
+import MainLayout from "../../components/main-layout";
 
 const ProfilePage = () => (
     <>
-        <ProfileSidebar />
-        <main className="main main-visible">
+        {/* <ProfileSidebar /> */}
+        <MainLayout visible={true}>
             <ProfileBody />
-        </main>
+        </MainLayout>
+        {/* <main className="main main-visible">
+            <ProfileBody />
+        </main> */}
     </>
 );
 

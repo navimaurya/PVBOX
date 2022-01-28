@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
-
+import Error from '../../components/error/error-component'
 
 import SignIn from '../../components/sign-in/sign-in.component';
 import SignUp from '../../components/sign-up/sign-up.component';
 
 import './auth.style.css'
-const Auth = ({ isLogedIn, addNewMessagesStart }) => {
+const Auth = ({ isLogedIn, addNewMessagesStart, error }) => {
     const [page, setPage] = useState(true);
+
     return (
         <> {
             isLogedIn ? <Redirect to='/chats/' />
@@ -28,16 +29,17 @@ const Auth = ({ isLogedIn, addNewMessagesStart }) => {
                                 <SignIn />
                                 :
                                 <SignUp />}
-
                         </div>
                     </div>
+                    {error && <Error>{error?.message}</Error>}
                 </>
         }
         </>
     )
 }
 const mapStateToProps = state => ({
-    isLogedIn: !!state.user.currentUser
+    isLogedIn: !!state.user.currentUser,
+    error: state.user.error
 })
 
 export default connect(mapStateToProps)(Auth);

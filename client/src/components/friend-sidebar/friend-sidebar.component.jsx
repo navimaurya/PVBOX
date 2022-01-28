@@ -101,7 +101,7 @@ const FirendSidebar = ({ friendsList, viewFriend, mainToggle, addFriendToggle })
                                 */}
 
 
-                                <form className="form-inline">
+                                {/* <form className="form-inline">
                                     <div className="input-group">
                                         <input type="text"
                                             className="form-control search border-right-0 transparent-bg pr-0"
@@ -109,20 +109,15 @@ const FirendSidebar = ({ friendsList, viewFriend, mainToggle, addFriendToggle })
                                         <div className="input-group-append">
                                             <div className="input-group-text transparent-bg border-left-0"
                                                 role="button">
-                                                {/* <!-- Default :: Inline SVG --> */}
                                                 <svg className="text-muted hw-20" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round"
                                                         strokeWidth="2"
                                                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                                </svg>
-
-                                                {/* <!-- Alternate :: External File link --> */}
-                                                {/* <!-- <img className="injectable hw-20" src=".//assets/media/heroicons/outline/search.svg" alt=""/> --> */}
-                                            </div>
+                                                </svg> </div>
                                         </div>
                                     </div>
-                                </form>
+                                </form> */}
                                 {/* <!-- Sidebar Search End --> */}
                             </div>
                             {/* <!-- Sidebar Header End --> */}

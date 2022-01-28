@@ -49,8 +49,7 @@ export function* chatSendStartfuntion({ payload }) {
     const { receiver, message } = payload;
     try {
         const { data } = yield axios.post('/api/send', {
-            receiver,
-            message
+            ...payload
         });
         if (data.status === 'success') {
             yield put(checkChatList(payload))
@@ -65,11 +64,11 @@ export function* pullNewMessages() {
     try {
         while (true) {
             const res = yield axios.get('/api/new');
-            yield console.log(res.data.data);
+            // yield console.log(res.data.data);
             if (res.data.data.length) {
                 yield put(addNewMessagesSuccess(res.data.data));
             }
-            yield delay(3000);
+            yield delay(1000);
         }
 
     } catch (error) {

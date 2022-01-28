@@ -69,7 +69,7 @@ const ListHead = () => {
 
                 </div> */}
 
-                <form className="form-inline">
+                {/* <form className="form-inline">
                     <div className="input-group">
                         <input type="text" className="form-control search border-right-0 transparent-bg pr-0" placeholder="Search users" />
                         <div className="input-group-append">
@@ -81,7 +81,7 @@ const ListHead = () => {
                             </div>
                         </div>
                     </div>
-                </form>
+                </form> */}
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ import { openChatStart } from "../../redux/opend-chat/open-chat-action";
 
 const ChatBody = ({ openedChat }) => {
     // openChatStart(state);
-    console.log({...openedChat});
+    console.log({ ...openedChat });
     return (
         <div className="chats">
             <div className="chat-body">
@@ -28,8 +28,6 @@ const ChatBody = ({ openedChat }) => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                     </svg>
-
-                                    {/* <!-- <img className="injectable hw-20" src=".//assets/media/heroicons/outline/search.svg" alt="Search icon"> --> */}
                                 </span>
                             </div>
                         </div>
@@ -607,7 +605,7 @@ const ChatBody = ({ openedChat }) => {
 }
 const mapStateToProps = createStructuredSelector({
     chats: selectChats,
-    openedChat : selectOpenChatFriend
+    openedChat: selectOpenChatFriend
 })
 
 const mapDispatchToProps = dispatch => ({
